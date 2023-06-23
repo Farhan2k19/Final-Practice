@@ -61,7 +61,26 @@ app.post("/addUsers", async (req, res) => {
     await user.save();
     res.redirect("/Show");
     });
+ 
+
+    app.get('/delete',(req,res)=>{
+      res.render(path.join(__dirname,'pages','delete.ejs'));
+  }
+  );
+  
+    app.post('/delete', async (req, res) => {
+      const id = req.body.name;
+      await User.deleteOne({name:id});
+      res.redirect("/Show");
+      });
+
+    app.get('/update',(req,res)=>{
+      res.render(path.join(__dirname,'pages','update.ejs'));
+  }
+  );
+
+  
+    
 
 
-
-    app.listen(5000, () => console.log('Server running on port 3000'));
+    app.listen(5000, () => console.log('Server running on port 5000'));

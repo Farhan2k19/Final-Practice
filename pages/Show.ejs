@@ -13,9 +13,12 @@
 
     for (let i = 0; i < users.length; i++) {
         %>
-        <h1><%= users[i].name %></h1>
-        <h1><%= users[i].email %></h1>
-        <h1><%= users[i].password %></h1>
+            <h1>
+               <%= i+1 %>
+            </h1>
+        <h1>Name :<%= users[i].name %></h1>
+        <h1>Email: <%= users[i].email %></h1>
+        <h1>Password: <%= users[i].password %></h1>
         <%
     }
     %>
